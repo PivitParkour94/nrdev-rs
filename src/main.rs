@@ -28,7 +28,7 @@ fn internal_error(req: &Request<'_>) -> Template {
 fn rocket() -> _ {
     rocket::build()
     .attach(Template::fairing())
-    .mount("/demo", routes![admin_page])
+    .mount("/", routes![admin_page])
     .mount("/", FileServer::from(relative!("static")))
     .register("/", catchers![not_found,internal_error])
 }

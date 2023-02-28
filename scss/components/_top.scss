@@ -1,0 +1,13 @@
+section.top {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    background: var(--color-light);
+    height: 20%;
+    margin: 0;
+    padding: 0 2rem;
+}
+
+section.top > h1 {
+    margin: 0;
+}

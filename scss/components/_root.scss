@@ -1,0 +1,59 @@
+:root {
+  --color-foreground: rgb(10, 35, 67);
+  --color-primary: var(--color-foreground);
+  --color-foreground-light: rgb(10 35 67 / .95);
+  --color-background: #FFFDF7;
+  --color-background-light: rgb(231, 231, 231);
+  --color-accent: #2CA58D;
+  --color-light: #84BC9C;
+
+  --font-main: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  // --br-smooth: 4rem;
+  --br-smooth: 0rem;
+  --header-height: 40px;
+}
+
+/* Utilities */
+
+  .invert {
+    background-color: var(--color-light);
+    color: var(--color-accent);
+  }
+  
+  .invert:hover {
+    background-color: #8bb48588;
+  }
+
+  .action {
+    font-size: 2rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.2em;
+    background-color: var(--color-accent);
+    color: var(--color-foreground);
+  }
+  
+  .action:hover {
+    background-color: var(--color-background);
+    color: var(--color-accent);
+    cursor: pointer;
+  }
+
+  #update-button.action {
+    // background-color: red !important;
+    background-color: var(--color-light);
+  }
+
+  #update-button.action:hover {
+    // background-color: red !important;
+    background-color: var(--color-background);
+    color: var(--color-accent);
+  }
+
+  p, span, .general-text {
+    color: var(--color-foreground);
+  }
+
+  .hidden {
+    display: none;
+  }

@@ -1,0 +1,106 @@
+.help-request {
+    grid-area: request;
+    // background-color: var(--color-light);
+    /* width: 100%; */
+    font-family: var(--font-main);
+    display: grid;
+    grid-template-columns: [first] auto [second] 1fr [third] 1fr [end] auto;
+    /* grid-template-rows: [head] 1fr [form] auto [actions] 1fr; */
+    // grid-template-areas:
+    //   "head"
+    //   "form"
+    //   "actions";
+  }
+  
+  .subtitle {
+    /* height: 500px; */
+    padding: 2rem;
+    font-size: clamp(1.5rem, 8vw, 3rem);
+    text-align: center;
+    grid-area: head;
+    grid-row: head;
+    grid-column: 2 / 4;
+  }
+  
+  .request-img,
+  form {
+    grid-area: form;
+    grid-column: 2/3;
+  }
+  
+  .request-img {
+    background-color: var(--color-background);
+    padding: 5rem;
+    grid-column: 2;
+  }
+  
+  .request-img > img {
+    background-color: var(--color-background);
+    width: 100%;
+    aspect-ratio: 1;
+  }
+  
+  form {
+    padding: 5rem;
+    grid-column: 3;
+    display: grid;
+    justify-content: center;
+    background-color: var(--color-accent);
+    border-radius: var(--br-smooth) 0 0 0;
+  }
+  
+  .form-row {
+    padding: 0 3rem;
+    /* display: grid; */
+    /* grid-row: 1fr 3fr; */
+  }
+  
+  .form-row > label {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+    font-family: var(--font-main);
+    color: var(--color-primary);
+    font-weight: bold;
+    padding: none;
+    padding-left: 1rem;
+    /* display:none; */
+    /* grid-row: 1/2; */
+  }
+  
+  .form-row > select,
+  .form-row > input,
+  .form-row > textarea {
+    /* background-color: blue; */
+    /* grid-row: 2/6; */
+  }
+  
+  .reason-ul {
+    /* background-color: red; */
+    padding: 1rem 0;
+  }
+  .reason-ul > li {
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 2rem;
+  }
+  
+  .reason-ul > li:hover {
+    background-color: var(--color-light);
+    color: var(--color-background);
+  }
+  
+  .reason-ul > li[data-selected="true"] {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+  }
+  
+  .form-actions {
+    grid-area: actions;
+    grid-column: 2/4;
+    padding: 4rem;
+    text-align: center;
+  }
+  
+  .submit-button {
+    font-size: 4rem;
+  }
+  

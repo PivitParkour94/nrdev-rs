@@ -288,7 +288,7 @@ p, span, .general-text {
 .logo {
   background-color: var(--color-accent);
   /* fill: var(--color-accent); */
-  /* height: 20px; */
+  height: 20px;
 }
 
 .mobile-title {

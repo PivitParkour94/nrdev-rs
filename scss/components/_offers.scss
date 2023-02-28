@@ -1,0 +1,40 @@
+.offers {
+    grid-area: offers;
+    display: flex;
+    flex-direction: row;
+    font-size: clamp(1.5rem, 8vw, 3rem);
+  }
+  
+  .offer {
+    flex: 1 1 auto;
+    padding: 5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .offer > p {
+    padding-top: 1rem;
+    padding-bottom: 6rem;
+  }
+  
+  .offer-1 {
+    grid-area: offer1;
+    background-color: var(--color-light);
+    border-radius: var(--br-smooth) 0 0 0;
+    /* aspect-ratio: 1; */
+  }
+  
+  .offer-2 {
+    grid-area: offer2;
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    border-radius: 0 var(--br-smooth) 0 0;
+    /* aspect-ratio: 1; */
+  }
+  
+  #offline-button.action:hover {
+    background-color: var(--color-background-light);
+  }
+
+
