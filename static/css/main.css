@@ -1,0 +1,856 @@
+/**
+ RESET
+ */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+:root {
+  --color-foreground: rgb(10, 35, 67);
+  --color-primary: var(--color-foreground);
+  --color-foreground-light: rgb(10 35 67 / .95);
+  --color-background: #FFFDF7;
+  --color-background-light: rgb(231, 231, 231);
+  --color-accent: #2CA58D;
+  --color-light: #84BC9C;
+  --font-main: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  --br-smooth: 0rem;
+  --header-height: 40px;
+}
+
+/* Utilities */
+.invert {
+  background-color: var(--color-light);
+  color: var(--color-accent);
+}
+
+.invert:hover {
+  background-color: #8bb48588;
+}
+
+.action {
+  font-size: 2rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.2em;
+  background-color: var(--color-accent);
+  color: var(--color-foreground);
+}
+
+.action:hover {
+  background-color: var(--color-background);
+  color: var(--color-accent);
+  cursor: pointer;
+}
+
+#update-button.action {
+  background-color: var(--color-light);
+}
+
+#update-button.action:hover {
+  background-color: var(--color-background);
+  color: var(--color-accent);
+}
+
+p, span, .general-text {
+  color: var(--color-foreground);
+}
+
+.hidden {
+  display: none;
+}
+
+p, span, .general-text {
+  color: var(--color-foreground);
+}
+
+@media screen and (max-width: 500px) {
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+/* MENU */
+.topbar {
+  grid-area: header;
+  display: flex;
+  background-color: var(--color-foreground);
+  color: var(--color-background);
+  z-index: 1;
+  align-items: center;
+  height: var(--header-height);
+  width: 100%;
+  position: fixed;
+}
+
+@media screen and (min-width: 500px) {
+  .topbar[data-fixed=true] {
+    position: fixed;
+    animation: slideFromTop 0.5s ease-in-out;
+    transform-origin: top;
+  }
+}
+@keyframes slideFromTop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Menu Toggle CSS ONLY */
+.menu-toggle {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0 1rem;
+}
+
+.menu-toggle span,
+.menu-toggle span::before,
+.menu-toggle span::after {
+  display: block;
+  height: 2px;
+  width: 1.5em;
+  background: var(--color-background);
+}
+
+.menu-toggle span::before,
+.menu-toggle span::after {
+  content: " ";
+  position: absolute;
+  white-space: normal;
+}
+
+.menu-toggle span::before {
+  top: 7px;
+}
+
+.menu-toggle span::after {
+  bottom: 7px;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  transform: scale(1.1);
+}
+
+#menu-toggle-checkbox {
+  display: none;
+}
+
+#menu-toggle-checkbox:checked ~ nav {
+  display: block;
+  transform: scale(1, 1);
+}
+
+#menu-toggle-checkbox:checked ~ nav ul li.nav-item {
+  opacity: 1;
+  transition: opacity 250ms ease-in 250ms;
+  border-bottom: 1px solid var(--color-background);
+}
+
+#menu-toggle-checkbox:checked ~ nav::before {
+  display: block;
+}
+
+.logo {
+  background-color: var(--color-accent);
+  /* fill: var(--color-accent); */
+  /* height: 20px; */
+}
+
+.mobile-title {
+  align-self: center;
+  justify-self: center;
+  margin: 0 auto;
+  font-family: var(--font-main);
+  font-size: 1.5rem;
+  flex: none;
+}
+
+nav {
+  position: fixed;
+  text-align: left;
+  left: 0;
+  top: calc(var(--header-height) - 1px);
+  width: 90%;
+  height: 100%;
+  /* padding: 1rem; */
+  background-color: var(--color-foreground-light);
+  transform: scale(1, 0);
+  transition: transform 500ms ease-in-out;
+  transform-origin: top;
+}
+
+nav::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(1, 1, 1, 0.3);
+  height: 100%;
+  width: 50%;
+  float: right;
+  left: 100%;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li.nav-item {
+  display: flex;
+  padding: 1rem 0.5rem;
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+  position: relative;
+  align-self: flex-start;
+}
+
+nav ul li.nav-item:hover,
+nav ul li.nav-item:focus {
+  background-color: var(--color-foreground-light);
+}
+
+nav ul li.nav-item a, .menu-text {
+  color: var(--color-background);
+  text-decoration: none;
+  font-size: 2rem;
+  text-transform: uppercase;
+  /* position:relative; */
+}
+
+/** SUBMENU CSS ONLY */
+.nav-item > .subnav-menu {
+  height: 0;
+  opacity: 0;
+  width: 100%;
+  font-size: 0.75em;
+  left: 2rem;
+  margin: 1rem -9rem;
+  transform: scaleY(0);
+  transition: opacity 2s ease;
+}
+
+.subnav {
+  margin-top: 2rem;
+  width: 80%;
+}
+
+.subnav-item {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.expander::after {
+  content: " ";
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  background-color: var(--color-background);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  transform: rotate(90deg);
+  transition: transform 500ms ease-in-out;
+  margin: 0.5rem;
+}
+
+.expander:hover::after,
+.expander:focus::after {
+  transform: rotate(180deg);
+}
+
+#service-submenu-toggle-checkbox {
+  display: none;
+}
+
+#service-submenu-toggle-checkbox:checked ~ .expander::after {
+  transform: rotate(90deg);
+}
+
+#service-submenu-toggle-checkbox:checked ~ .subnav-menu {
+  position: relative;
+  height: initial;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/*Desktop menu*/
+@media screen and (min-width: 750px) {
+  /* main {
+      display: grid;
+      grid-template-rows: 1fr auto 3fr 3fr minmax() 2fr;
+    } */
+  .topbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row: 1/2;
+    height: max-content;
+    padding: 2%;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .logo {
+    grid-column: 2/span 1;
+  }
+
+  .mobile-title {
+    display: none;
+  }
+
+  nav {
+    all: unset;
+    grid-column: 1/2;
+    display: flex;
+    justify-content: flex-end;
+    /* margin-right: 1rem; */
+  }
+
+  nav ul {
+    /* all: unset; */
+    display: flex;
+    flex: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: 1px solid red; */
+  }
+
+  nav ul li.nav-item {
+    all: unset;
+    opacity: 1;
+    justify-items: center;
+  }
+
+  nav ul li.nav-item:hover {
+    /* all: unset; */
+    opacity: 1;
+    background-color: unset;
+  }
+
+  /* nav ul li.nav-item::before {
+      content: '';
+      width: 3rem;
+      height: 2px;
+      background-color: var(--color-background);
+      position: absolute;
+    } */
+  nav ul li.nav-item a {
+    opacity: 1;
+    /* background-color: var(--color-foreground); */
+  }
+
+  nav ul li.nav-item a:hover {
+    color: var(--color-background-light);
+  }
+
+  nav ul li.nav-item a:hover ~ .subnav-menu {
+    display: block;
+  }
+
+  .hero {
+    grid-row: 2/3;
+  }
+
+  .info {
+    grid-row: 3/4;
+  }
+
+  .offers {
+    grid-row: 4/5;
+  }
+
+  .help-request {
+    grid-row: 5/6;
+  }
+}
+/* HERO */
+.hero {
+  grid-area: hero;
+  height: 70vh;
+  background-color: var(--color-background);
+  position: relative;
+  z-index: -2;
+}
+
+#pezazz {
+  position: fixed !important;
+  left: 10%;
+  top: 20%;
+  /* z-index: 0; */
+}
+
+.pezazz-elem {
+  width: 300px;
+}
+
+@media screen and (max-width: 500px) {
+  .hero-image {
+    display: none;
+  }
+
+  #pezazz {
+    width: 100%;
+  }
+}
+.hero-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: center/cover no-repeat url("images/table.jpg");
+  /* background-image: url('images/table.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; */
+}
+
+.hero-text {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  height: 100%;
+}
+
+.title {
+  margin-top: 1em;
+  color: var(--color-primary);
+  /* font-family: var(--font-main); */
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: bold;
+}
+
+.tagline {
+  color: var(--color-foreground);
+  /* font-family: var(--font-main); */
+  text-align: center;
+  align-self: end;
+  margin-bottom: 1em;
+  font-size: clamp(1.5rem, 8vw, 3rem);
+  justify-content: center;
+  display: flex;
+}
+
+.pop-word {
+  color: var(--color-accent);
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-flex;
+  /* width: 0%; */
+  overflow: hidden;
+  margin: 0 0.1rem 0 1rem;
+  /* animation-name: typetext;
+    animation-duration: 1000ms;
+    animation-delay: 5000ms;
+    animation-iteration-count: infinite; */
+  /* transform: typetext() 3000ms; */
+}
+
+/* Animate in JS not CSS */
+/* @keyframes typetext {
+      0% {
+          width: 0px;
+      }
+      16% {
+          width: 32px;
+      }
+      32% {
+          width: 64px;
+      }
+      48% {
+          width: 96px;
+      }
+      64% {
+          width: 128px;
+      }
+      80% {
+          width: 160px;
+      }
+      100% {
+          width: inherit;
+      }
+  } */
+.cursor {
+  content: "|";
+  width: 3px;
+  height: 3rem;
+  display: inline;
+  background-color: var(--color-accent);
+  opacity: 0;
+  animation-name: blink;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  margin-right: 1rem;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+section.top {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  background: var(--color-light);
+  height: 20%;
+  margin: 0;
+  padding: 0 2rem;
+}
+
+section.top > h1 {
+  margin: 0;
+}
+
+.info {
+  grid-area: info;
+  height: 25vh;
+  display: flex;
+  flex-direction: row;
+  font-size: 2.5rem;
+}
+
+.info-1 {
+  grid-area: info1;
+  height: 100%;
+  width: 25%;
+  flex: 2fr;
+  background-color: var(--color-primary);
+  font-family: var(--font-main);
+  padding: 0 2em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 var(--br-smooth) 0;
+}
+
+.info-1 > p {
+  color: var(--color-background);
+}
+
+.info-2 {
+  grid-area: info2;
+  height: 100%;
+  width: 75%;
+  background-color: var(--color-background);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-size: 1.5rem; */
+  padding: 0 5rem;
+  /* width: 0px; */
+}
+
+/**
+ Slide animation for fun
+ */
+/* @keyframes slideRight {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 75%;
+    }
+} */
+.info-2 > p {
+  color: var(--color-primary);
+}
+
+.accent-text {
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.offers {
+  grid-area: offers;
+  display: flex;
+  flex-direction: row;
+  font-size: clamp(1.5rem, 8vw, 3rem);
+}
+
+.offer {
+  flex: 1 1 auto;
+  padding: 5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.offer > p {
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+}
+
+.offer-1 {
+  grid-area: offer1;
+  background-color: var(--color-light);
+  border-radius: var(--br-smooth) 0 0 0;
+  /* aspect-ratio: 1; */
+}
+
+.offer-2 {
+  grid-area: offer2;
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  border-radius: 0 var(--br-smooth) 0 0;
+  /* aspect-ratio: 1; */
+}
+
+#offline-button.action:hover {
+  background-color: var(--color-background-light);
+}
+
+.help-request {
+  grid-area: request;
+  /* width: 100%; */
+  font-family: var(--font-main);
+  display: grid;
+  grid-template-columns: [first] auto [second] 1fr [third] 1fr [end] auto;
+  /* grid-template-rows: [head] 1fr [form] auto [actions] 1fr; */
+}
+
+.subtitle {
+  /* height: 500px; */
+  padding: 2rem;
+  font-size: clamp(1.5rem, 8vw, 3rem);
+  text-align: center;
+  grid-area: head;
+  grid-row: head;
+  grid-column: 2/4;
+}
+
+.request-img,
+form {
+  grid-area: form;
+  grid-column: 2/3;
+}
+
+.request-img {
+  background-color: var(--color-background);
+  padding: 5rem;
+  grid-column: 2;
+}
+
+.request-img > img {
+  background-color: var(--color-background);
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+form {
+  padding: 5rem;
+  grid-column: 3;
+  display: grid;
+  justify-content: center;
+  background-color: var(--color-accent);
+  border-radius: var(--br-smooth) 0 0 0;
+}
+
+.form-row {
+  padding: 0 3rem;
+  /* display: grid; */
+  /* grid-row: 1fr 3fr; */
+}
+
+.form-row > label {
+  font-size: clamp(1.5rem, 8vw, 2rem);
+  font-family: var(--font-main);
+  color: var(--color-primary);
+  font-weight: bold;
+  padding: none;
+  padding-left: 1rem;
+  /* display:none; */
+  /* grid-row: 1/2; */
+}
+
+.form-row > select,
+.form-row > input,
+.form-row > textarea {
+  /* background-color: blue; */
+  /* grid-row: 2/6; */
+}
+
+.reason-ul {
+  /* background-color: red; */
+  padding: 1rem 0;
+}
+
+.reason-ul > li {
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.reason-ul > li:hover {
+  background-color: var(--color-light);
+  color: var(--color-background);
+}
+
+.reason-ul > li[data-selected=true] {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.form-actions {
+  grid-area: actions;
+  grid-column: 2/4;
+  padding: 4rem;
+  text-align: center;
+}
+
+.submit-button {
+  font-size: 4rem;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: var(--color-foreground);
+  color: var(--color-background);
+}
+
+/* Changes here override all */
+
+/*# sourceMappingURL=main.css.map */

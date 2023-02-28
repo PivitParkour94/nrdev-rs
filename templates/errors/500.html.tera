@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>500 - Hello Rocket</title>
+  </head>
+  <body>
+    <h1>500: Something broke.</h1>
+    The page at {{ uri }} does not exist!
+  </body>
+</html>
