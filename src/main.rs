@@ -5,38 +5,6 @@ use rocket::Request;
 use rocket_dyn_templates::{Template, context};
 use rocket::fs::{FileServer, relative};
 
-
-
-// @link https://github.com/SergioBenitez/Rocket/tree/v0.5-rc/examples
-
-#[get("/demo/hbs")]
-fn hbs_page() -> Template {
-    Template::render("hbs/base", context! { 
-        title: "Home",
-        name: "Human",
-        adjective: "cool",
-        first_name: "Nate",
-        last_name: "Dev"
-    })
-}
-
-
-// #[get("/nrdev")]
-// fn nrdev_page() -> Template {
-    // Template::render("hbs/nrdev", context! {})
-// }
-
-#[get("/demo/tera")]
-fn tera_page() -> Template {
-    Template::render("tera/base", context! { 
-        title: "Home",
-        name: "Human",
-        adjective: "cool",
-        first_name: "Nate",
-        last_name: "Dev"
-    })
-}
-
 #[get("/admin")]
 fn admin_page() -> &'static str {
     "Admin section todo"
