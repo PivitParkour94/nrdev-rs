@@ -9,124 +9,121 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="/css/main.css" />
-    <script src="/js/main.js"></script>
-    <script src="/js/home.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Bellezza&display=swap');
+
+      .heading {
+        text-align: center;
+      }
+      .banner {
+        background-color: #23887d;
+      }
+      .logo {
+        position: relative;
+        top: 20vh; 
+        width: 30%; 
+      }
+      .words {
+        padding-top: 150px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+      }
+      .green-text {
+        color: #23887d;
+      }
+      .blue-text {
+        color: #0c2343;
+      }
+      .bio {
+        padding-top: 150px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        align-items: center;
+      }
+      .bio > img {
+        padding: 0px;
+      }
+      .bio > p {
+        grid-column: 2/5;
+        margin: 0px 1em 0px;
+      }
+      .contact-details {
+        padding-top: 150px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+      }
+      .contact-details > h2 {
+        border-bottom: #23887d 5px solid;
+      }
+      .contact-info {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        width: 30%;
+      }
+      .contact-info:hover {
+        border:#23887d 2px solid;
+        border-radius: 50px;
+      }
+      .contact-info > .phone {
+        position: relative;
+        left: 0px;
+      }
+
+      h1, h2, h3, span, p {
+        font-family: 'Belezza', sans-serif;
+      }
+
+      p {
+        font-size: 3em;
+      }
+      h1 {
+        font-size: 4em;
+      }
+      h2 {
+        font-size: 3em;
+      }
+      h3 {
+        font-size: 2em;
+      }
+      a {
+        text-decoration: none;
+      }
+
+    </style>
   </head>
   <body>
-    <main>
-      <header id="menubar" class="topbar">
-        <label for="menu-toggle-checkbox" class="menu-toggle">
-          <span></span>
-        </label>
-        <img src="images/logo.png" class="logo" alt="Nathaniel R. Development Logo" />
-        <h1 class="mobile-title">Nathaniel R. Development</h1>
-        <input type="checkbox" id="menu-toggle-checkbox" />
-        <nav>
-          <ul>
-            <li class="nav-item selected-menu"><a href="#">Home</a></li>
-            <li class="nav-item"><a href="/about.html">About Me</a></li>
-          </ul>
-        </nav>
-      </header>
-      <section class="hero">
-        <object id="pezazz" data="images/pezzaz.svg"></object>
-        <div class="hero-image">
-          <div class="hero-text">
-            <!-- <svg viewBox="0 0 750 70">
-                        <text class="svgStroke" x="10" y="45">Nathaniel R. Development</text>
-                        <text class="svgText" x="10" y="45">Nathaniel R. Development</text>
-                      </svg> -->
-            <h1 class="title">Nathaniel R. Development</h1>
-            <!-- Photo by Tima Miroshnichenko from Pexels -->
-            <span class="tagline">
-              Helping you to
-              <span id="pop-word" class="pop-word"> thrive </span>
-              <div class="cursor"></div>
-              online
-            </span>
-          </div>
-        </div>
-      </section>
-      <section class="offers">
-        <div class="offer offer-1">
-          <p class="general-text">
-            Do you have a business and are looking to get online?
-          </p>
-          <button id="offline-button" class="action">Get Online</button>
-        </div>
-        <div class="offer offer-2">
-          <p>Do you already have a website that you would like to improve?</p>
-          <button id="update-button" class="action">Update Now</button>
-        </div>
-      </section>
-      <section class="info">
-        <div class="info-1">
-          <p>Cost-Effective Solutions</p>
-        </div>
-        <div class="info-2">
-          <p>
-            We&apos;re here to take the
-            <span class="accent-text">guess-work</span> and
-            <span class="accent-text">stress</span> out of organising your
-            website services
-          </p>
-        </div>
-      </section>
-      <section class="help-request">
-        <div class="request-img">
-          <img src="images/laptop.jpg" />
-          <div class="request-img-placeholder"></div>
-        </div>
-        <!-- <img class="request-img" alt="Person helping fill out form" /> -->
-        <form id="request-form" action="submit.php" method="post">
-          <div class="form-row">
-            <label for="reason">How can we help?</label>
-            <ul class="reason-ul">
-              <li class="general-text" data-value="0">I want to get online!</li>
-              <li class="general-text" data-value="1">
-                I need to update my existing site!
-              </li>
-              <li class="general-text" data-value="2">Other...</li>
-            </ul>
-            <input id="reason-input" name="reason" type="hidden" value="0" />
-            <!-- <select name="reason">
-              <option value="0">What do you do?</option>
-              <option value="1">I want to get online</option>
-              <option value="2">Need to update my existing site</option>
-              <option value="3">Other</option>
-            </select> -->
-          </div>
-
-          <div class="form-row">
-            <label for="applicant">Name</label>
-            <input
-              type="text"
-              name="applicant"
-              id="applicant"
-              placeholder="Your name"
-            />
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="Your email so we can get in touch"
-            />
-          </div>
-          <div class="form-row">
-            <label for="">Comments</label>
-            <textarea name="comments" id="comments"></textarea>
-          </div>
-          <button id="submit-button" class="submit-button action">Send</button>
-        </form>
-        <div class="form-actions"></div>
-      </section>
-      <section class="footer">
-        <p>here is the footer</p>
-      </section>
-    </main>
+    <div class="heading">
+      <div class="banner">
+        <img class="logo" src="images/logo.png">
+      </div>  
+    </div>
+    <div class="words">
+      <h1 class="green-text">GET</h1>
+      <h1 class="blue-text">SURVIVE</h1>
+      <h1 class="green-text">THRIVE</h1>
+    </div>
+    <div class="bio">
+      <img class="profile-image" src="images/profile.png">
+      <p>I'm an Aussie software developer with a passion for helping businesses get online. If you need a website setup, maintained or customised, let's have a chat!</p>
+    </div>
+    <div class="contact-details">
+      <h2>Get in touch</h2>
+      <div class="contact-info phone">
+          <img src="images/phone.png">
+          <a href="tel:+61481821240">
+            <h3 class="blue-text">0481821240</h3>
+        </a>
+    </div>
+      <div class="contact-info email">
+          <img src="images/mail.png">
+          <a href="mailto:nathaniel@nrdev.au">
+            <h3 class="blue-text">nathaniel@nrdev.au</h3>
+          </a>
+      </div>
+    </div>
   </body>
 </html>
