@@ -4,7 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nathaniel R. Development</title>
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>NRDev | Helping you GET, SURVIVE and THRIVE online</title>
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="With a decade of experience as a software developer, let us help your Brick and Mortar business get setup online. Extend your current existing website and even help build your SaaS features asynchronously. We believe Test Driven Development is the way to get code right from the beginning">
+    <meta property="og:title" content="NRDev | Helping you GET, SURVIVE and THRIVE online">
+    <meta property="og:description" content="With a decade of experience as a software developer, let us help your Brick and Mortar business get setup online. Extend your current existing website and even help build your SaaS features asynchronously. We believe Test Driven Development is the way to get code right from the beginning">
+    <meta property="og:image" content="https://nrdev.au/images/logo.png">
+    <meta property="og:locale" content="en-US">
+    <meta property="og:url" content="https://nrdev.au">
+    <link rel="canonical" href="https://nrdev.au">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -62,13 +72,6 @@
         grid-column: 2/5;
         margin: 0px 1em 0px;
       }
-      .contact-details {
-        padding-top: 150px;
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        grid-template-rows: repeat(3, 1fr);
-        justify-items: center;
-      }
 
       .contact-details > h2 {
         grid-column: 1/5;
@@ -76,37 +79,64 @@
       }
 
       .contact-details {
-        padding-top: 150px;
+        padding-top: 15vh;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         justify-items: center;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
       }
       .contact-details > h2 {
         padding-left: 50px;
         padding-right: 50px;
         border-bottom: #23887d 5px solid;
+        text-transform: uppercase;
       }
       .contact-info {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
         align-items: center;
-        width: 30%;
         justify-items: center;
-        
+        justify-self: center;
+        grid-column: 2/4;
+        justify-self: normal;      
+        border: #23887d 2px solid;
+        border-radius: 15px;
+        padding: 1%;
+        text-transform: uppercase;
       }
+
+      .contact-info span {
+        font-size: 2em;
+      }
+
+      .contact-info > a > img {
+        width: 20vw;
+      }
+
       .contact-info > a:hover {
         color: #23887d;
       }
-      .contact-info.phone {
-        grid-column: 1/4;
+
+      .contact-info.schedule {
         grid-row: 2;
-        justify-self: center;
+      }
+
+      .contact-info > a {
+        display: flex;
+        align-items: center;
+      }
+
+      .contact-info> a > span {
+        padding-left: 5%;
+      }
+
+      .contact-info.phone {
+        grid-row: 3;
       }
 
       .contact-info.email {
-        grid-column: 1/4;
-        grid-row: 3;
-        justify-self: center;
+        grid-row: 4;
       }
 
       h1,
@@ -160,7 +190,7 @@
         .bio > p {
           grid-column: 1;
         }
-        .contact-info {
+        .xcontact-info {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           align-items: center;
@@ -184,6 +214,9 @@
         .contact-details > h2 {
           padding-top: 15%;
           text-align: center;
+        }
+        .contact-info {
+          margin-bottom: 15%;
         }
 
       }
@@ -212,16 +245,22 @@
       </div>
       <div class="contact-details">
         <h2>Get in touch</h2>
+        <div class="contact-info schedule">
+          <a href="https://calendly.com/nrdev">
+            <img src="images/calendar.png" />
+            <span class="blue-text">Book a 30 minute meeting</h3>
+          </a>
+        </div>
         <div class="contact-info phone">
-          <img src="images/phone.png" />
           <a href="tel:+61481821240">
-            <h3 class="blue-text">0481821240</h3>
+            <img src="images/phone.png" />
+            <span class="blue-text">(+61) 481 821 240</h3>
           </a>
         </div>
         <div class="contact-info email">
-          <img src="images/mail.png" />
-          <a href="mailto:nathaniel@nrdev.au">
-            <h3 class="blue-text">nathaniel@nrdev.au</h3>
+          <a href="mailto:nate@nrdev.au">
+            <img src="images/mail.png" />
+            <span class="blue-text">nate@nrdev.au</h3>
           </a>
         </div>
       </div>
