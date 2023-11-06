@@ -89,8 +89,7 @@
         gap: 5%;
       }
       .contact-details > h2 {
-        padding-left: 50px;
-        padding-right: 50px;
+        font-weight: lighter;
         border-bottom: #23887d 5px solid;
         text-transform: uppercase;
       }
@@ -102,7 +101,6 @@
         justify-self: normal;      
         border: #23887d 2px solid;
         border-radius: 15px;
-        padding: 1%;
         text-transform: uppercase;
       }
 
@@ -125,6 +123,16 @@
       .contact-info > a {
         display: flex;
         align-items: center;
+        position: relative;
+      }
+
+      .contact-info > a::before {
+        content: '';
+        position: absolute;
+        background-color: #23887d80;
+        height:100%;
+        width: 50%;
+        border-radius: 15px;
       }
 
       .contact-info> a > span {
@@ -247,8 +255,8 @@
         <h2>Get in touch</h2>
         <div class="contact-info schedule">
           <a href="https://calendly.com/nrdev">
-            <img src="images/calendar.png" />
-            <span class="blue-text">Book a 30 minute meeting</h3>
+            <img src="images/videocall.png" />
+            <span class="blue-text">Book a meeting</h3>
           </a>
         </div>
         <div class="contact-info phone">
